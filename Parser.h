@@ -25,7 +25,7 @@ class Parser {
 	 do {
              if (!(is >> tok))
 	          break;
-	     if (tok[0] == '"') { // read until end "
+	     if (tok[0] == '"') { // read until end quote
 		tok = tok.substr(1, tok.size() - 1);
 		if (tok[tok.length() - 1] == '"') 
                    tok.erase(tok.size() - 1);
