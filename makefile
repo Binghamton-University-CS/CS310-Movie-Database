@@ -18,17 +18,8 @@ OBJ = obj
 
 all: $(BIN)/$(EXE)
 
-$(BIN)/$(EXE): $(OBJ)/movie_db.o $(OBJ)/Movie.o $(OBJ)/Cast.o \
-		$(OBJ)/ActorDB.o $(OBJ)/MovieDB.o $(OBJ)/Actor.o
-	$(CC) $(FLAGS) $(OBJ)/movie_db.o $(OBJ)/Movie.o \
-		$(OBJ)/Cast.o $(OBJ)/ActorDB.o $(OBJ)/MovieDB.o \
-		$(OBJ)/Actor.o -o $@
-
-$(OBJ)/movie_db.o: movie_db.cpp Parser.h
-	$(CC) $(FLAGS) -c movie_db.cpp -o $@
-
-$(OBJ)/Movie.o: Movie.cpp Movie.h 
-	$(CC) $(FLAGS) -c Movie.cpp -o $@
+$(BIN)/$(EXE): $(OBJ)/Cast.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o
+	$(CC) $(FLAGS) $(OBJ)/Cast.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o -o $@
 
 $(OBJ)/Actor.o: Actor.cpp Actor.h Array.h
 	$(CC) $(FLAGS) -c Actor.cpp -o $@
@@ -38,9 +29,6 @@ $(OBJ)/Cast.o: Cast.cpp Cast.h
 
 $(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h
 	$(CC) $(FLAGS) -c ActorDB.cpp -o $@
-
-$(OBJ)/MovieDB.o: MovieDB.cpp MovieDB.h Array.h
-	$(CC) $(FLAGS) -c MovieDB.cpp -o $@
 
 $(BIN)/$(MENU_EXE): $(OBJ)/sample_menu.o
 	$(CC) $(FLAGS) $(OBJ)/sample_menu.o -o $@
