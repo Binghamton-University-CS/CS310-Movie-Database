@@ -1,6 +1,9 @@
 #include "ActorDB.h"
 #include "MovieDB.h"
 
+//getPraise()
+
+
 ActorDB::ActorDB() {
 }
 bool ActorDB::removeActor(int actor_id){
@@ -11,13 +14,7 @@ bool ActorDB::removeActor(int actor_id){
   }
   return false;
 }
-bool ActorDB::addMovie(unsigned int actorid, unsigned int movieid) {
-  // cout << "MOVIES SIZE DURING addActor inMOVIEDB : " << movies.size() << endl;
-	for (unsigned int i = 0; i < actors.size(); i++) 
-	  if (actors[i].getID() == actorid)
-			return actors[i].addMovie(movieid);
-	return false;
-}
+
 bool ActorDB::find(unsigned int actorid) const {
 	for (unsigned int i = 0; i < actors.size(); i++) {
 		if (actors[i].getID() == actorid)
@@ -45,21 +42,3 @@ bool ActorDB::addActor(Actor &actor) {
 }
 
 
-void ActorDB::showCareer(unsigned int actorid, MovieDB &moviedb) {unsigned int i;
-	for (i = 0; i < actors.size(); i++) {
-		if (actors[i].getID() == actorid) {
-		  cout << actors[i].getName() << " has acted in:" << 
-				endl;
-			break;
-	}
-	}
-		if (i < actors.size()){
-		  //cout << "actor.showCareer was reached" << endl;
-	  /* for(int i = 0; i < moviedb.movies.size(); i++){
-	    for(int k = 0; k < moviedb.movies[i].
-	  }*/
-	  //	  cout << "Movies.size() = " << moviedb.movies.size() << endl;
-	  actors[i].showCareer(moviedb);}
-	else 
-		cout << "actor id " << actorid << " not found" << endl;
-}

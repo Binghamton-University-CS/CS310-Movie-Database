@@ -31,6 +31,10 @@ void do_register_actor(int actor_id, string actor_last, string actor_first) {
 			" already in use" << endl;
 	return;
 }
+void do_praise_actor(string actor_last, int praise_points) {
+    //change praise points of actor
+    //goes to actordb, finds actor, changes actors praise points, changes actordb accordingly
+}
 
 
 bool expected(Parser &p, unsigned int howmany) {
@@ -64,6 +68,9 @@ bool accept_commands(istream &is, bool silent=false, bool echo=false) {
       cout << "Choose from " << endl <<
       "   register_actor <actorid> <last> <first>" << endl <<
       "   remove_actor <actorid>" << endl <<
+      "   praise_actor <last> <praise points>" << endl <<
+      "   award_actor" << endl <<
+      "   show_praise" << endl <<
       "   quit" << endl; 
       cout << ": ";
       }
@@ -97,13 +104,31 @@ bool accept_commands(istream &is, bool silent=false, bool echo=false) {
       int actor_id = stoi(p.getArg(1));
       do_remove_actor(actor_id);
       }
-      else if (p.getOperation() == "register_actor") {
+      else if (p.getOperation() == "register_actor") { //actid, last, first
       if (!expected(p, 3))  
             continue;
       if (!assertInt(p, 1))
                continue;
             int actor_id = stoi(p.getArg(1));
             do_register_actor(actor_id, p.getArg(2), p.getArg(3));
+      }
+      else if (p.getOperation() == "praise_actor") { //last name, praise points
+      if (!expected(p, 2))  
+            continue;
+      if (!assertInt(p, 2))
+               continue;
+            int praise_points = stoi(p.getArg(2));
+            do_praise_actor(p.getArg(1), praise_points); //lastname, praise points
+      }
+      else if (p.getOperation() == "award_actor") { 
+      if (!expected(p, 0))  
+            continue;
+            do_award_actor(); 
+      }
+       else if (p.getOperation() == "show_praise") { 
+      if (!expected(p, 0))  
+            continue;
+            do_show_praise(); 
       }
       
       else {
