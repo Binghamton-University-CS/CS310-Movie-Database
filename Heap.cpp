@@ -42,9 +42,10 @@ void Heap::Perlocatedown(nodeIndex) {
       }
    }
 }
-int Heap::Insert(int num){
+int Heap::Insert(int num){ //returns the index at where its inserted
    arr.push_back(num);
    Perlocateup(arr.size()-1);
+
 }
 void Heap::delete(int index){
    arr.at(index) = arr.at(arr.size()-1);

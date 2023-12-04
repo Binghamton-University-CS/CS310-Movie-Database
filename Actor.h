@@ -16,6 +16,8 @@ class Actor {
 	public:
 		string last;
 		string first;
+		int heapIndex;
+		int praise_points;
 		Actor();
 		Actor(unsigned int act_id, string last, string first); 
                 Actor& operator=(Actor& other);

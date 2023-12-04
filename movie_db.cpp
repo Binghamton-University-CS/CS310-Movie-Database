@@ -34,9 +34,12 @@ void do_register_actor(int actor_id, string actor_last, string actor_first) {
 void do_praise_actor(string actor_last, int praise_points) {
     //change praise points of actor
     //goes to actordb, finds actor, changes actors praise points, changes actordb accordingly
-
+  actordb.praiseActor(actor_last, praise_points);   
     
 }
+void do_award_actor(){
+   
+} 
 
 
 bool expected(Parser &p, unsigned int howmany) {
