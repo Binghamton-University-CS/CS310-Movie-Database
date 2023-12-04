@@ -35,25 +35,5 @@ Actor::Actor(unsigned int act_id, string lname, string fname) {
 	actor_id = act_id;
 }
 
-bool Actor::addMovie(unsigned int movieid) {
-	for (unsigned int i = 0; i < movies.size(); i++) {
-		if (movies[i] == movieid)
-			return false;
-	}
-	movies.push_back(movieid);
-	return true;
-}
 
 
-void Actor::showCareer(MovieDB &moviedb){
-	string movietitle;
-	//cout << first << " " << last << " has acted in:" << endl;
-	//	cout << "movies size at the end: " << movies.size() << endl;
-	for (int i = 0; i < movies.size(); i++) {
-	  //  cout << "for loop reached" << endl;
-		if (moviedb.find(movies[i])) {
-			movietitle = moviedb.getTitle(movies[i]);
-			cout << "- " << movietitle << endl;
-		}
-	}
-}
