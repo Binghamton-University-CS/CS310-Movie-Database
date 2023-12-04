@@ -9,7 +9,7 @@ ActorDB::ActorDB() {
 bool ActorDB::removeActor(int actor_id){
   for(unsigned int i = 0; i < actors.size(); i++){
     if(actors[i].getID() == actor_id){
-      return actors.remove(actors[i]);
+      return actors.erase(actors[i]);
     }
   }
   return false;
@@ -32,11 +32,15 @@ string ActorDB::getName(unsigned int actorid) const {
 }
 
 bool ActorDB::addActor(Actor &actor) {
+	
 	for (unsigned int i = 0; i < actors.size(); i++) {
 		if (actors[i].getID() == actor.getID())
 			return false;
 	}
 	actors.push_back(actor);
+	actorBST.insert(Node(actor.last))
+
+
 	
 	return true;
 }

@@ -11,6 +11,7 @@ class Array{
     void push_back(type val);
     void sort_push(type val);
     type& at(int i);
+    int at(type& x);
     void erase(int begin);
     int len = 0;
     int size();
@@ -18,6 +19,10 @@ class Array{
     void resize();
     void sort();
 };
+template<typename type>
+at Array<type>(type& x){
+    for(int i = 0;
+}
 template <typename type>
 Array<type>::Array(){
     arr = new type[limit];

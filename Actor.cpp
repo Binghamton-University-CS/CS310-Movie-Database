@@ -13,6 +13,9 @@ Actor& Actor::operator=(Actor& other) {
 bool Actor::operator>(Actor& other){
   return actor_id > other.actor_id;
 }
+bool Actor::operator><Actor& other){
+  return actor_id < other.actor_id;
+}
 bool Actor::operator==(Actor& other){
   if(actor_id == other.actor_id &&
      last == other.last &&

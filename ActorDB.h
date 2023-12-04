@@ -11,7 +11,8 @@ class MovieDB;
 
 class ActorDB {
 	private:
-		Array<Actor> actors;		
+		Array<Actor> actors;
+		BST<Node> actorBST;
 	public:
 		
 		ActorDB();
