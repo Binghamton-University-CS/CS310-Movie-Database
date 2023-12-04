@@ -18,8 +18,6 @@ class Actor {
 		string first;
 		Actor();
 		Actor(unsigned int act_id, string last, string first); 
-		bool addMovie(unsigned int movie_id);
-		void showCareer(MovieDB &moviedb);
                 Actor& operator=(Actor& other);
                 bool operator==(Actor& other);
                 bool operator>(Actor& other);
