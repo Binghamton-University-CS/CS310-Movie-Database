@@ -38,13 +38,14 @@ bool ActorDB::addActor(Actor &actor) {
 			return false;
 	}
 	actors.sort_push(actor);
-	
+
 	int index;
 	for(int i = 0; i < actors.size(); i++){
 		if(actors[i].getID() == actor.getID())
 		index = i;
 	}
 	actorBST.insert(Node(actor.last, index));
+	
 
 
 	

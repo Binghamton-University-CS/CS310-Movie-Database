@@ -13,6 +13,7 @@ class ActorDB {
 	private:
 		Array<Actor> actors;
 		BST<Node> actorBST;
+		Heap<int> praiseHeap;
 	public:
 		
 		ActorDB();
