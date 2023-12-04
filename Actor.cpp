@@ -13,7 +13,7 @@ Actor& Actor::operator=(Actor& other) {
 bool Actor::operator>(Actor& other){
   return actor_id > other.actor_id;
 }
-bool Actor::operator><Actor& other){
+bool Actor::operator<(Actor& other){
   return actor_id < other.actor_id;
 }
 bool Actor::operator==(Actor& other){
@@ -34,6 +34,3 @@ Actor::Actor(unsigned int act_id, string lname, string fname) {
 	last = lname;
 	actor_id = act_id;
 }
-
-
-
