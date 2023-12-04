@@ -17,7 +17,7 @@ class BST{
     public:
         BST(Node* treeRoot): root(treeRoot) {}
         BST() : root(nullptr) {}
-        void insert(string key);
+        void insert(string key, int index);
         bool remove(string key);
         Node* getRoot();
         Node* find(string key);
@@ -28,20 +28,20 @@ class BST{
         void postOrderTraversal();
 };
 
-void BST::insert(string key){
+void BST::insert(string key, int index){
     
     currNode* = root;
     while(1){
         if(key > currNode.key){
             if(currNode -> right == nullptr){
-                currNode -> right = new Node(key);
+                currNode -> right = new Node(key, index);
                 break;
             }
             else currNode = currNode -> right;
         }
         if(key < currNode.key){
             if(currNode -> left == nullptr){
-                currNode -> left = new Node(key);
+                currNode -> left = new Node(key, index);
                 break;
             }
             else currNode = currNode -> left;
