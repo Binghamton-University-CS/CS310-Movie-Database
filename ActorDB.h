@@ -9,13 +9,13 @@ using namespace std;
 //#include "Array.h"
 class BST;
 class Heap;
-class MovieDB;
+
 
 class ActorDB {
+	
 	private:
 		Array<Actor> actors;
-		BST actorBST;
-		Heap praiseHeap;
+		
 	public:
 		
 		ActorDB();

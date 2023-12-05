@@ -1,10 +1,8 @@
 #include "ActorDB.h"
 #include "BST.h"
 #include "Heap.h"
-
-//getPraise()
-
-
+BST actorBST;
+Heap praiseHeap;
 ActorDB::ActorDB() {
 }
 bool ActorDB::removeActor(int actor_id){

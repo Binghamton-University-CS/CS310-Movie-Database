@@ -18,23 +18,24 @@ OBJ = obj
 
 all: $(EXE)
 
-$(BIN)/$(EXE): $(OBJ)/Array.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o
-	$(CC) $(FLAGS) $(OBJ)/Array.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o -o $@
+$(EXE): $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o
+	$(CC) $(FLAGS)  $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o -o $@
 
 $(OBJ)/Actor.o: Actor.cpp Actor.h Array.h
 	$(CC) $(FLAGS) -c Actor.cpp -o $@
 
-$(OBJ)/Heap.o: Heap.cpp Heap.h Arrah.h 
+$(OBJ)/Heap.o: Heap.cpp Heap.h Array.h 
 	$(CC) $(FLAGS) -c Heap.cpp -o $@
 
-$(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h Arrah.h 
+$(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h Array.h BST.h
 	$(CC) $(FLAGS) -c ActorDB.cpp -o $@
+$(OBJ)/movie_db.o: movie_db.cpp ActorDB.h Array.h BST.h
+	$(CC) $(FLAGS) -c movie_db.cpp -o $@
+# $(BIN)/$(MENU_EXE): $(OBJ)/sample_menu.o
+# 	$(CC) $(FLAGS) $(OBJ)/sample_menu.o -o $@
 
-$(BIN)/$(MENU_EXE): $(OBJ)/sample_menu.o
-	$(CC) $(FLAGS) $(OBJ)/sample_menu.o -o $@
-
-$(OBJ)/sample_menu.o: sample_menu.cpp Parser.h
-	$(CC) $(FLAGS) -c sample_menu.cpp -o $@
+# $(OBJ)/sample_menu.o: sample_menu.cpp Parser.h
+# 	$(CC) $(FLAGS) -c sample_menu.cpp -o $@
 
 tar:	clean
 	tar cvvf $(TARFILE) $(REPODIR)
