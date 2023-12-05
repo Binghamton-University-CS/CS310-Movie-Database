@@ -18,16 +18,16 @@ OBJ = obj
 
 all: $(BIN)/$(EXE)
 
-$(BIN)/$(EXE): $(OBJ)/Cast.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o
-	$(CC) $(FLAGS) $(OBJ)/Cast.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o -o $@
+$(BIN)/$(EXE): $(OBJ)/Array.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o
+	$(CC) $(FLAGS) $(OBJ)/Array.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o -o $@
 
 $(OBJ)/Actor.o: Actor.cpp Actor.h Array.h
 	$(CC) $(FLAGS) -c Actor.cpp -o $@
 
-$(OBJ)/Cast.o: Cast.cpp Cast.h
-	$(CC) $(FLAGS) -c Cast.cpp -o $@
+$(OBJ)/Heap.o: Heap.cpp Heap.h Arrah.h 
+	$(CC) $(FLAGS) -c Heap.cpp -o $@
 
-$(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h
+$(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h Arrah.h 
 	$(CC) $(FLAGS) -c ActorDB.cpp -o $@
 
 $(BIN)/$(MENU_EXE): $(OBJ)/sample_menu.o
