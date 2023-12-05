@@ -18,10 +18,10 @@ class ActorDB {
 		
 	public:
 		ActorDB();
-		bool find(unsigned int actorid) const;
-		string getName(unsigned int actorid) const;
+		bool find(unsigned int actorid);
+		string getName(unsigned int actorid);
 		bool addActor( Actor &actor);
-		bool removeActor(unsigned int actor_id);
+		bool removeActor(int actor_id);
 		bool praiseActor(string lastName, int praise_points);
 };
 

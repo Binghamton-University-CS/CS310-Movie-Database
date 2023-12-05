@@ -6,7 +6,7 @@ Heap praiseHeap;
 ActorDB::ActorDB() {
 }
 bool ActorDB::removeActor(int actor_id){
-  for(unsigned int i = 0; i < actors.size(); i++){
+  for(int i = 0; i < actors.size(); i++){
     if(actors[i].getID() == actor_id){
       return actors.erase(actors[i]);
     }
@@ -14,7 +14,7 @@ bool ActorDB::removeActor(int actor_id){
   return false;
 }
 
-bool ActorDB::find(unsigned int actorid) const {
+bool ActorDB::find(unsigned int actorid) {
 	for (int i = 0; i < actors.size(); i++) {
 		if (actors[i].getID() == actorid)
 			return true;
@@ -22,7 +22,7 @@ bool ActorDB::find(unsigned int actorid) const {
 	return false;
 }
 
-string ActorDB::getName(unsigned int actorid) const {
+string ActorDB::getName(unsigned int actorid) {
 	for (int i = 0; i < actors.size(); i++) {
 		if (actors[i].getID() == actorid)
 			return actors[i].getName();
@@ -43,7 +43,8 @@ bool ActorDB::addActor(Actor &actor) {
 		if(actors[i].getID() == actor.getID())
 		index = i;
 	}
-	actorBST.insert(Node(actor.last, index));
+	actorBST.insert(actor.last));
+	actorBST.find(actor.last)->arrayIndex = index;
 
 
 
