@@ -15,7 +15,7 @@ bool ActorDB::removeActor(int actor_id){
 }
 
 bool ActorDB::find(unsigned int actorid) const {
-	for (unsigned int i = 0; i < actors.size(); i++) {
+	for (int i = 0; i < actors.size(); i++) {
 		if (actors[i].getID() == actorid)
 			return true;
 	}
@@ -23,7 +23,7 @@ bool ActorDB::find(unsigned int actorid) const {
 }
 
 string ActorDB::getName(unsigned int actorid) const {
-	for (unsigned int i = 0; i < actors.size(); i++) {
+	for (int i = 0; i < actors.size(); i++) {
 		if (actors[i].getID() == actorid)
 			return actors[i].getName();
 	}
@@ -32,7 +32,7 @@ string ActorDB::getName(unsigned int actorid) const {
 
 bool ActorDB::addActor(Actor &actor) {
 	
-	for (unsigned int i = 0; i < actors.size(); i++) {
+	for (int i = 0; i < actors.size(); i++) {
 		if (actors[i].getID() == actor.getID())
 			return false;
 	}
