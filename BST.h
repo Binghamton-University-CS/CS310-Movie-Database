@@ -19,7 +19,7 @@ class BST{
     public:
         BST(Node* treeRoot): root(treeRoot) {}
         BST() : root(nullptr) {}
-        void insert(string key, int index);
+        void insert(string& key, int& index);
         bool remove(string key);
         Node* getRoot();
         Node* find(string key);
