@@ -40,6 +40,7 @@ void do_praise_actor(string actor_last, int praise_points) {
 void do_award_actor(){
    
 } 
+void do_show_praise(){}
 
 
 bool expected(Parser &p, unsigned int howmany) {

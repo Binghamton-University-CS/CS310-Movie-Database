@@ -22,6 +22,8 @@ class BST{
         Node* getRoot();
         Node* find(string key);
         Node* findMin(Node* node);
+        bool remove(Node*& node, string key);
+        
 };
 
 void BST::insert(string key, int index){
