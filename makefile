@@ -16,7 +16,7 @@ CC = g++
 BIN = bin
 OBJ = obj
 
-all: $(BIN)/$(EXE)
+all: $(EXE)
 
 $(BIN)/$(EXE): $(OBJ)/Array.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o
 	$(CC) $(FLAGS) $(OBJ)/Array.o $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/sample_menu.o -o $@
