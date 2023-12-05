@@ -12,7 +12,7 @@ class Array{
     void sort_push(type val);
     type& at(int i);
     //int at(type& x);
-    void erase(int begin);
+    void erase(int begin); //bool should be*********
     int len = 0;
     int size();
     int begin();

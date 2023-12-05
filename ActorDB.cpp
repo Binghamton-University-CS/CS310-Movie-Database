@@ -8,7 +8,8 @@ ActorDB::ActorDB() {
 bool ActorDB::removeActor(int actor_id){
   for(int i = 0; i < actors.size(); i++){
     if(actors.at(i).getID() == actor_id){
-      return actors.erase(actors.at(i));
+      actors.erase(i);
+	  return true; //wrong logic
     }
   }
   return false;
@@ -63,9 +64,11 @@ bool ActorDB::praiseActor(string lastName, int praisePts){
 	int index = actorNode->arrayIndex;
 
 	if(praisePts <= 0){ 
-		actors.at(actorNode->arrayIndex) = praisePts;
+		actors.at(actorNode->arrayIndex).praise_points = praisePts;
+		//updateNode in the heap********************************************************
 	}
-	else actors.at(actorNode->arrayIndex) += praisePts;
+	else actors.at(actorNode->arrayIndex).praise_points += praisePts;
+	//updateNode in the heap********************************************************
 
 	if(index == -1){
 		//create new heap node
