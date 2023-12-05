@@ -59,16 +59,16 @@ bool ActorDB::praiseActor(string lastName, int praisePts){
 	
 	*/
 	Node* actorNode = actorBST.find(lastName);
-	int index = actorNode.arrayIndex;
+	int index = actorNode->arrayIndex;
 
-	if(praise_points <= 0){ 
-		actorNode.praise_points = praisePts;
+	if(praisePts <= 0){ 
+		actorNode->praise_points = praisePts;
 	}
-	else actorNode.praise_points += praisePts;
+	else actorNode->praise_points += praisePts;
 
 	if(index == -1){
 		//create new heap node
-		if(praiseHeap.insert(praisePts)) {
+		if(praiseHeap.Insert(praisePts)) {
 			cout << "success " << endl; //UPDATE THIS
 			return true;
 		}
@@ -80,7 +80,8 @@ bool ActorDB::praiseActor(string lastName, int praisePts){
 		} 
 	}
 	else{ //already exists in the heap
-	//	return praiseHeap.updateNode(index, praisePts)
+		//return praiseHeap.updateNode(index, praisePts)
+		return 1;
 	}
 }
 
