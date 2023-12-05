@@ -6,8 +6,8 @@ class Heap{
         Array<int> arr; 
         
     public:
-        void Perlocatedown(int index);
-        void Perlocateup(int index); //returns the index where its inserted 
+        int Perlocatedown(int index);
+        int Perlocateup(int index); //returns the index where its inserted 
         void Extractmax();
         int Insert(int num); //returns the index where its inserted
         void Delete(int index);
