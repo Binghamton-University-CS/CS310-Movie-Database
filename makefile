@@ -1,6 +1,6 @@
 COURSE = cs310
 SEMESTER = Fall2023
-CP_NUMBER = 1
+CP_NUMBER = 4
 LASTNAME = Lewis
 GITUSERID = mlewis608
 EXE = movie_db
@@ -29,6 +29,7 @@ $(OBJ)/Heap.o: Heap.cpp Heap.h Array.h
 
 $(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h Array.h BST.h
 	$(CC) $(FLAGS) -c ActorDB.cpp -o $@
+
 $(OBJ)/movie_db.o: movie_db.cpp ActorDB.h Array.h BST.h
 	$(CC) $(FLAGS) -c movie_db.cpp -o $@
 # $(BIN)/$(MENU_EXE): $(OBJ)/sample_menu.o
@@ -42,4 +43,4 @@ tar:	clean
 	gzip $(TARFILE)
 
 clean:
-	rm -f $(OBJ)/*.o $(BIN)/$(EXE) *.tar.gz
+	rm -f $(OBJ)/*.o $(EXE) *.tar.gz
