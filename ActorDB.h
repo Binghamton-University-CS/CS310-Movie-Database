@@ -17,13 +17,12 @@ class ActorDB {
 		Array<Actor> actors;
 		
 	public:
-		
 		ActorDB();
 		bool find(unsigned int actorid) const;
 		string getName(unsigned int actorid) const;
-  bool addActor( Actor &actor);
-  bool removeActor(int actor_id);
-  bool praiseActor(string lastName, int praise_points);
+		bool addActor( Actor &actor);
+		bool removeActor(unsigned int actor_id);
+		bool praiseActor(string lastName, int praise_points);
 };
 
 #endif
