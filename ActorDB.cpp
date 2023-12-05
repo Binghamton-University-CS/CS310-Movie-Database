@@ -43,7 +43,7 @@ bool ActorDB::addActor(Actor &actor) {
 		if(actors[i].getID() == actor.getID())
 		index = i;
 	}
-	actorBST.insert(actor.last));
+	actorBST.insert(actor.last, index);
 	actorBST.find(actor.last)->arrayIndex = index;
 
 
