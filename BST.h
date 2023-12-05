@@ -21,18 +21,13 @@ class BST{
         bool remove(string key);
         Node* getRoot();
         Node* find(string key);
-        Node* BST::findMin(Node* node);
-
-        //extra, probably wont need:
-        void inOrderTraversal();
-        void preOrderTraversal();
-        void postOrderTraversal();
+        Node* findMin(Node* node);
 };
 
 void BST::insert(string key, int index){
     if(root == nullptr){
         root = new Node(key);
-        root -> arrayIndex = arrayIndex;
+        root -> arrayIndex = index;
         return;
     }
     Node* currNode = root;
@@ -85,7 +80,7 @@ bool BST::remove(Node*& node, string key) {
         }
         return true;
     }
-}
+} 
 
 Node* BST::findMin(Node* node) {
     if(node == nullptr){
