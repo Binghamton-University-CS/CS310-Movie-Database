@@ -7,8 +7,8 @@ ActorDB::ActorDB() {
 }
 bool ActorDB::removeActor(int actor_id){
   for(int i = 0; i < actors.size(); i++){
-    if(actors[i].getID() == actor_id){
-      return actors.erase(actors[i]);
+    if(actors.at(i).getID() == actor_id){
+      return actors.erase(actors.at(i));
     }
   }
   return false;
@@ -16,7 +16,7 @@ bool ActorDB::removeActor(int actor_id){
 
 bool ActorDB::find(unsigned int actorid) {
 	for (int i = 0; i < actors.size(); i++) {
-		if (actors[i].getID() == actorid)
+		if (actors.at(i).getID() == actorid)
 			return true;
 	}
 	return false;
@@ -24,8 +24,8 @@ bool ActorDB::find(unsigned int actorid) {
 
 string ActorDB::getName(unsigned int actorid) {
 	for (int i = 0; i < actors.size(); i++) {
-		if (actors[i].getID() == actorid)
-			return actors[i].getName();
+		if (actors.at(i).getID() == actorid)
+			return actors.at(i).getName();
 	}
 	return "EMPTY";
 }
@@ -33,14 +33,14 @@ string ActorDB::getName(unsigned int actorid) {
 bool ActorDB::addActor(Actor &actor) {
 	
 	for (int i = 0; i < actors.size(); i++) {
-		if (actors[i].getID() == actor.getID())
+		if (actors.at(i).getID() == actor.getID())
 			return false;
 	}
 	actors.sort_push(actor);
 
 	int index;
 	for(int i = 0; i < actors.size(); i++){
-		if(actors[i].getID() == actor.getID())
+		if(actors.at(i).getID() == actor.getID())
 		index = i;
 	}
 	actorBST.insert(actor.last));
@@ -63,9 +63,9 @@ bool ActorDB::praiseActor(string lastName, int praisePts){
 	int index = actorNode->arrayIndex;
 
 	if(praisePts <= 0){ 
-		actors[actorNode->arrayIndex] = praisePts;
+		actors.at(actorNode->arrayIndex) = praisePts;
 	}
-	else actors[actorNode->arrayIndex] += praisePts;
+	else actors.at(actorNode->arrayIndex) += praisePts;
 
 	if(index == -1){
 		//create new heap node
