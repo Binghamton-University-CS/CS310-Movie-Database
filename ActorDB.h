@@ -7,8 +7,8 @@ using namespace std;
 #include <vector>
 #include "Actor.h"
 //#include "Array.h"
-#include "BST.h"
-#include "Heap.h"
+class BST;
+class Heap;
 class MovieDB;
 
 class ActorDB {

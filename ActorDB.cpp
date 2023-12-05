@@ -1,5 +1,6 @@
 #include "ActorDB.h"
-
+#include "BST.h"
+#include "Heap.h"
 
 //getPraise()
 
