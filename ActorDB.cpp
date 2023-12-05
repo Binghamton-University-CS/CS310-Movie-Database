@@ -62,9 +62,9 @@ bool ActorDB::praiseActor(string lastName, int praisePts){
 	int index = actorNode->arrayIndex;
 
 	if(praisePts <= 0){ 
-		actorNode->praise_points = praisePts;
+		actors[actorNode->arrayIndex] = praisePts;
 	}
-	else actorNode->praise_points += praisePts;
+	else actors[actorNode->arrayIndex] += praisePts;
 
 	if(index == -1){
 		//create new heap node

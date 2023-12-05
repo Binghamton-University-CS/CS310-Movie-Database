@@ -6,7 +6,7 @@ using namespace std;
 #include <vector>
 #include "Array.h"
 
-class MovieDB;
+
 
 class Actor {
 	private:
