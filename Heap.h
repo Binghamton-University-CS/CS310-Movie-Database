@@ -1,3 +1,5 @@
+#ifndef HEAP_H
+#define HEAP_H
 #include<iostream>
 #include "Array.h"
 using namespace std;
@@ -16,3 +18,4 @@ class Heap{
         
 
 };
+#endif
