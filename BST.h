@@ -28,7 +28,7 @@ class BST{
         
 };
 
-void BST::insert(string key, int index){
+void BST::insert(string& key, int& index){
     if(root == nullptr){
         root = new Node(key);
         root -> arrayIndex = index;

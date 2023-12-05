@@ -22,7 +22,7 @@ class Actor {
 		bool operator==(Actor& other);
 		bool operator>(Actor& other);
 		bool operator<(Actor& other);
-		Actor(const Actor& other): actor_id(other.actor_id), last(other.last), first(other.first), movies(other.movies){}
+		Actor(const Actor& other): actor_id(other.actor_id), last(other.last), first(other.first){}
 		string getName() const { 
 			return first + " " + last;
 		}
