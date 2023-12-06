@@ -54,4 +54,18 @@ void Heap::delete(int index){
    arr.at(index) = arr.at(arr.size()-1);
    erase(arr.size()-1);
    Perlocatedown(index);
+   return;
+}
+
+bool Heap::updateNode(int index, int num){
+   if(arr.at(index) < num){
+      arr.at(index) = num;
+      return Perlocateup(index);
+   }
+   if(arr.at(index) > num){
+      arr.at(index) = num;
+      return Perlocatedown(index);
+   }
+   return index;
+   
 }
