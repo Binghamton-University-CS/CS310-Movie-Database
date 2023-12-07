@@ -15,7 +15,7 @@ bool ActorDB::removeActor(int actor_id){
   return false;
 }
 
-bool ActorDB::find(unsigned int actorid) {
+bool ActorDB::find(int actorid) {
 	for (int i = 0; i < actors.size(); i++) {
 		if (actors.at(i).getID() == actorid)
 			return true;
@@ -23,7 +23,7 @@ bool ActorDB::find(unsigned int actorid) {
 	return false;
 }
 
-string ActorDB::getName(unsigned int actorid) {
+string ActorDB::getName(int actorid) {
 	for (int i = 0; i < actors.size(); i++) {
 		if (actors.at(i).getID() == actorid)
 			return actors.at(i).getName();

@@ -58,12 +58,12 @@ void Heap::Delete(int index){
 }
 
 bool Heap::updateNode(int index, int num){
-   if(arr.at(index) < num){
-      arr.at(index) = num;
+   if(arr.at(index)->praise_points < num){
+      arr.at(index)->praise_points = num;
       return Perlocateup(index);
    }
-   if(arr.at(index) > num){
-      arr.at(index) = num;
+   if(arr.at(index)->praise_points > num){
+      arr.at(index)->praise_points = num;
       return Perlocatedown(index);
    }
    return index;
