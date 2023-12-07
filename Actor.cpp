@@ -1,12 +1,12 @@
 #include "Actor.h"
-#include "MovieDB.h"
+
 
 Actor& Actor::operator=(Actor& other) {
     if (this != &other) { 
         actor_id = other.actor_id;
         last = other.last;
         first = other.first;
-        movies = other.movies;
+
     }
     return *this;
 }
@@ -19,8 +19,7 @@ bool Actor::operator<(Actor& other){
 bool Actor::operator==(Actor& other){
   if(actor_id == other.actor_id &&
      last == other.last &&
-     first == other.first &&
-     movies == other.movies) return true;
+     first == other.first ) return true;
   return false;
 }
 Actor::Actor() {

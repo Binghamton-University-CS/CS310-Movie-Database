@@ -61,6 +61,10 @@ bool ActorDB::praiseActor(string lastName, int praisePts){
 	
 	*/
 	Node* actorNode = actorBST.find(lastName);
+	if(actorNode == nullptr){
+		cout << "failed to add to BST" << endl;
+		return 0;
+	}
 	int index = actorNode->arrayIndex;
 
 	if(praisePts <= 0){ 

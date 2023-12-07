@@ -18,8 +18,8 @@ OBJ = obj
 
 all: $(EXE)
 
-$(EXE): $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o
-	$(CC) $(FLAGS)  $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o -o $@
+$(EXE): $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o $(OBJ)/movie_db.o
+	$(CC) $(FLAGS) $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o $(OBJ)/movie_db.o -o $(BIN)/$@
 
 $(OBJ)/Actor.o: Actor.cpp Actor.h Array.h
 	$(CC) $(FLAGS) -c Actor.cpp -o $@

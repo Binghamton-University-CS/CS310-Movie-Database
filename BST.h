@@ -32,6 +32,7 @@ void BST::insert(string& key, int& index){
     if(root == nullptr){
         root = new Node(key);
         root -> arrayIndex = index;
+        //cout << root -> key << endl;
         return;
     }
     Node* currNode = root;
@@ -116,6 +117,7 @@ Node* BST::find(string key){
             currNode = currNode -> left;
         }
         else if(key == currNode->key){ //found
+            cout << "Node found!" << endl;
             return currNode;
         }
     }
