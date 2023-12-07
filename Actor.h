@@ -14,7 +14,7 @@ class Actor {
 	public:
 		string last;
 		string first;
-		int heapIndex;
+		int heap_index;
 		int praise_points;
 		Actor();
 		Actor(unsigned int act_id, string last, string first); 
@@ -22,7 +22,7 @@ class Actor {
 		bool operator==(Actor& other);
 		bool operator>(Actor& other);
 		bool operator<(Actor& other);
-		Actor(const Actor& other): actor_id(other.actor_id), last(other.last), first(other.first){}
+		Actor(const Actor& other): actor_id(other.actor_id), last(other.last), first(other.first), praise_points(0){}
 		string getName() const { 
 			return first + " " + last;
 		}

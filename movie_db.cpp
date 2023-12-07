@@ -40,7 +40,10 @@ void do_praise_actor(string actor_last, int praise_points) {
 void do_award_actor(){
    
 } 
-void do_show_praise(){}
+void do_show_praise(){
+   cout << "show_praise: printing actors" << endl;
+   actordb.showPraise();
+}
 
 
 bool expected(Parser &p, unsigned int howmany) {

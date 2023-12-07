@@ -53,43 +53,33 @@ bool ActorDB::addActor(Actor &actor) {
 	return true;
 }
 
-bool ActorDB::praiseActor(string lastName, int praisePts){
-	/*
-	Update actor's praise points
-	check if its in the heap or not if so update in heap, if not create new heap node.
+bool ActorDB::praiseActor(string lastName, int praisePts) {
+    Node* actorNode = actorBST.find(lastName);
+    if (actorNode == nullptr) {
+        cout << "Actor not found in BST" << endl;
+        return false;
+    }
 
-	
-	*/
-	Node* actorNode = actorBST.find(lastName);
-	if(actorNode == nullptr){
-		cout << "failed to add to BST" << endl;
-		return 0;
-	}
-	int index = actorNode->arrayIndex;
+    int index = actorNode->arrayIndex;
+    Actor* actor = &actors.at(index);  // Get a pointer to the actor
 
-	if(praisePts <= 0){ 
-		actors.at(actorNode->arrayIndex).praise_points = praisePts;
-		//updateNode in the heap********************************************************
-	}
-	else actors.at(actorNode->arrayIndex).praise_points += praisePts;
-	//updateNode in the heap********************************************************
+    // Update praise points
+    actor->praise_points += praisePts;
 
-	// if(index == -1){
-	// 	//create new heap node
-	// 	if(praiseHeap.Insert(arr.at(arra))) {
-	// 		cout << "success " << endl; //UPDATE THIS
-	// 		return true;
-	// 	}
+    // Check if actor is already in the heap
+    if (actor->heap_index != -1) {
+        // Update actor's position in the heap
+        praiseHeap.updateNode(index, actor->praise_points);
+    } else {
+        // Insert the actor into the heap for the first time
+        actor-> heap_index = praiseHeap.Insert(actor); // Mark the actor as present in the heap
+    }
 
-			
-	// 	else{
-	// 		cout << "fail " << endl; //UPDATE THIS
-	// 		return false;
-	// 	} 
-	// }
-	// else{ //already exists in the heap
-	// 	//return praiseHeap.updateNode(index, praisePts)
-	// 	return 1;
-	// }
+    return true;
 }
 
+void ActorDB::showPraise(){
+	for(int i = 0; i < actors.size(); i ++){
+		cout << actors.at(i).getName() << ": " << actors.at(i).praise_points << " praise points" << endl;
+	}
+}

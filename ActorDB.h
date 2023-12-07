@@ -23,6 +23,7 @@ class ActorDB {
 		bool addActor( Actor &actor);
 		bool removeActor(int actor_id);
 		bool praiseActor(string lastName, int praise_points);
+		void showPraise();
 };
 
 #endif
