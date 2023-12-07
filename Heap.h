@@ -2,10 +2,12 @@
 #define HEAP_H
 #include<iostream>
 #include "Array.h"
+#include "Actor.h"
+
 using namespace std;
 class Heap{
     private:
-        Array<int> arr; 
+        Array<int> *Actor.h; 
         
     public:
         int Perlocatedown(int index);
