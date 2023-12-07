@@ -16,13 +16,14 @@ class Actor {
 		string first;
 		int heap_index;
 		int praise_points;
+		bool awarded;
 		Actor();
 		Actor(unsigned int act_id, string last, string first); 
 		Actor& operator=(Actor& other);
 		bool operator==(Actor& other);
 		bool operator>(Actor& other);
 		bool operator<(Actor& other);
-		Actor(const Actor& other): actor_id(other.actor_id), last(other.last), first(other.first), praise_points(0){}
+		Actor(const Actor& other): actor_id(other.actor_id), last(other.last), first(other.first), praise_points(0), awarded(false){}
 		string getName() const { 
 			return first + " " + last;
 		}

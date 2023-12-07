@@ -24,6 +24,7 @@ class ActorDB {
 		bool removeActor(int actor_id);
 		bool praiseActor(string lastName, int praise_points);
 		void showPraise();
+		void awardActor();
 };
 
 #endif

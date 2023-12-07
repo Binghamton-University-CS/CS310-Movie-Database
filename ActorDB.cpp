@@ -56,9 +56,12 @@ bool ActorDB::addActor(Actor &actor) {
 bool ActorDB::praiseActor(string lastName, int praisePts) {
     Node* actorNode = actorBST.find(lastName);
     if (actorNode == nullptr) {
-        cout << "Actor not found in BST" << endl;
         return false;
     }
+	if(actors.at(actorNode->arrayIndex).awarded){
+ 		cout << "Actor has been awarded already :/ ";
+		return false;
+	}
 
     int index = actorNode->arrayIndex;
     Actor* actor = &actors.at(index);  // Get a pointer to the actor
@@ -80,6 +83,12 @@ bool ActorDB::praiseActor(string lastName, int praisePts) {
 
 void ActorDB::showPraise(){
 	for(int i = 0; i < actors.size(); i ++){
+		if(actors.at(i).awarded) cout << "*AWARD*:	";
 		cout << actors.at(i).getName() << ": " << actors.at(i).praise_points << " praise points" << endl;
 	}
+}
+
+void ActorDB::awardActor(){
+	Actor* actor = praiseHeap.extractMax();
+	actor->awarded = true;
 }
