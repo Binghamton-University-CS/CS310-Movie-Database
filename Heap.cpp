@@ -69,3 +69,4 @@ bool Heap::updateNode(int index, int num){
    return index;
    
 }
+
