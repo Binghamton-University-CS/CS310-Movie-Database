@@ -9,6 +9,7 @@ class Array{
     int limit = 1;
     Array();
     void push_back(type val);
+    //void deep_push_back(type& val);
     void sort_push(type val);
     type& at(int i);
     //int at(type& x);
@@ -34,6 +35,15 @@ void Array<type>::push_back(type val){
     len++;
     return;
 }
+// template <typename type>
+// void Array<type>::deep_push_back(type& val){
+//     if(len == limit){
+//         this->resize();
+//     }
+//     arr[len] = *val;
+//     len++;
+//     return;
+// }
 template <typename type>
 void Array<type>::sort_push(type val){
     if(len == limit){

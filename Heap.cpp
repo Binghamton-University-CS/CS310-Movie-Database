@@ -7,7 +7,7 @@ int Heap::Perlocateup(int nodeIndex) {
    if (arr.at(nodeIndex)->praise_points <= arr.at(parentIndex)->praise_points || nodeIndex <= 0)
       return nodeIndex;
    else {
-      int temp = arr.at(nodeIndex);
+      Actor* temp = arr.at(nodeIndex);
       arr.at(nodeIndex) = arr.at(parentIndex);
       arr.at(parentIndex) = temp;
       nodeIndex = Perlocateup(parentIndex);
@@ -36,7 +36,7 @@ int Heap::Perlocatedown(int nodeIndex) {
          return nodeIndex;
       }
       else {
-         int temp = arr.at(nodeIndex);
+         Actor* temp = arr.at(nodeIndex);
          arr.at(nodeIndex) = arr.at(maxIndex);
          arr.at(maxIndex) = temp;
          nodeIndex = Perlocatedown(childIndex);
@@ -44,7 +44,7 @@ int Heap::Perlocatedown(int nodeIndex) {
       }
    }
 }
-int Heap::Insert(Actor& actor){ //returns the index at where its inserted
+int Heap::Insert(Actor* actor){ //returns the index at where its inserted
 
    arr.push_back(actor);
    return Perlocateup(arr.size()-1);
