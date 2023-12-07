@@ -44,7 +44,7 @@ int Heap::Perlocatedown(int nodeIndex) {
       }
    }
 }
-int Heap::Insert(Actor* actor){ //returns the index at where its inserted
+int Heap::Insert(Actor& actor){ //returns the index at where its inserted
 
    arr.push_back(actor);
    return Perlocateup(arr.size()-1);
