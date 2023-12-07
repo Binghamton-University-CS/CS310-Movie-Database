@@ -7,7 +7,7 @@
 using namespace std;
 class Heap{
     private:
-        Array<int*> array; 
+        Array<Actor*> arr; 
         
     public:
         int Perlocatedown(int index);

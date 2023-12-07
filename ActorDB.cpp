@@ -74,22 +74,22 @@ bool ActorDB::praiseActor(string lastName, int praisePts){
 	else actors.at(actorNode->arrayIndex).praise_points += praisePts;
 	//updateNode in the heap********************************************************
 
-	if(index == -1){
-		//create new heap node
-		if(praiseHeap.Insert(praisePts)) {
-			cout << "success " << endl; //UPDATE THIS
-			return true;
-		}
+	// if(index == -1){
+	// 	//create new heap node
+	// 	if(praiseHeap.Insert(arr.at(arra))) {
+	// 		cout << "success " << endl; //UPDATE THIS
+	// 		return true;
+	// 	}
 
 			
-		else{
-			cout << "fail " << endl; //UPDATE THIS
-			return false;
-		} 
-	}
-	else{ //already exists in the heap
-		//return praiseHeap.updateNode(index, praisePts)
-		return 1;
-	}
+	// 	else{
+	// 		cout << "fail " << endl; //UPDATE THIS
+	// 		return false;
+	// 	} 
+	// }
+	// else{ //already exists in the heap
+	// 	//return praiseHeap.updateNode(index, praisePts)
+	// 	return 1;
+	// }
 }
 
