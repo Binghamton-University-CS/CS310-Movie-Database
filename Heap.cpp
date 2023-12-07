@@ -4,7 +4,7 @@ using namespace std;
 
 int Heap::Perlocateup(int nodeIndex) {
    int parentIndex = (nodeIndex - 1) / 2;
-   if (arr.at(nodeIndex) <= arr.at(parentIndex) || nodeIndex <= 0)
+   if (arr.at(nodeIndex)->praise_points <= arr.at(parentIndex)->praise_points || nodeIndex <= 0)
       return nodeIndex;
    else {
       int temp = arr.at(nodeIndex);
@@ -17,7 +17,7 @@ int Heap::Perlocateup(int nodeIndex) {
 
 int Heap::Perlocatedown(int nodeIndex) {
    int childIndex = 2 * nodeIndex + 1;
-   int value = arr.at(nodeIndex);
+   int value = arr.at(nodeIndex)->praise_points;
    while (childIndex < arr.size()) {
       // Find the max among the node and all the node's children
       int maxValue = value;
@@ -26,8 +26,8 @@ int Heap::Perlocatedown(int nodeIndex) {
          return nodeIndex;
       }
       for (int i = 0; i < 2 && i + childIndex < arr.size(); i++) {
-         if (arr.at(i + childIndex) > maxValue) {
-            maxValue = arr.at(i + childIndex);
+         if (arr.at(i + childIndex)-> praise_points > maxValue) {
+            maxValue = arr.at(i + childIndex)->praise_points;
             maxIndex = i + childIndex;
          }
       }
@@ -44,9 +44,9 @@ int Heap::Perlocatedown(int nodeIndex) {
       }
    }
 }
-int Heap::Insert(int num){ //returns the index at where its inserted
+int Heap::Insert(Actor* actor){ //returns the index at where its inserted
 
-   arr.push_back(num);
+   arr.push_back(actor);
    return Perlocateup(arr.size()-1);
 
 }
