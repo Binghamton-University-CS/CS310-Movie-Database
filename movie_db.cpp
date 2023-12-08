@@ -132,12 +132,12 @@ bool accept_commands(istream &is, bool silent=false, bool echo=false) {
       }
       else if (p.getOperation() == "award_actor") { 
       if (!expected(p, 0))  
-            continue;
+               continue;
             do_award_actor(); 
       }
        else if (p.getOperation() == "show_praise") { 
       if (!expected(p, 0))  
-            continue;
+               continue;
             do_show_praise(); 
       }
       
