@@ -14,7 +14,7 @@ show_praise
 praise_actor last 20
 remove_actor 1
 show_praise
-register_actor l Lewis Mike
+register_actor 1 Lewis Mike
 remove_actor 4
 show_praise
 quit
