@@ -37,14 +37,15 @@ bool ActorDB::addActor(Actor &actor) {
 		if (actors.at(i).getID() == actor.getID())
 			return false;
 	}
-	actors.sort_push(actor);
+	actors.push_back(actor);
+	actors.sort_push();
 
 	int index;
 	for(int i = 0; i < actors.size(); i++){
 		if(actors.at(i).getID() == actor.getID())
 		index = i;
 	}
-	actorBST.insert(actor.last, index);
+	actorBST.insert(actor.last, index);//index not being updated
 	actorBST.find(actor.last)->arrayIndex = index;
 
 

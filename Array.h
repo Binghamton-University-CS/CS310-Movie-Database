@@ -10,7 +10,7 @@ class Array{
     Array();
     void push_back(type val);
     //void deep_push_back(type& val);
-    void sort_push(type val);
+    void sort_push();
     type& at(int i);
     //int at(type& x);
     void erase(int begin); //bool should be*********
@@ -45,12 +45,7 @@ void Array<type>::push_back(type val){
 //     return;
 // }
 template <typename type>
-void Array<type>::sort_push(type val){
-    if(len == limit){
-        this->resize();
-    }
-    arr[len] = val;
-    len++;
+void Array<type>::sort_push(){
     for (int i = len-1;i > 0; i--){
         if(arr[i]<arr[i-1]){
             type temp = arr[i];
