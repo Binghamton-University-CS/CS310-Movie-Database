@@ -90,5 +90,6 @@ void ActorDB::showPraise(){
 
 void ActorDB::awardActor(){
 	Actor* actor = praiseHeap.extractMax();
+	cout << "Awarded " << actor->last << " " << actor->first;
 	actor->awarded = true;
 }

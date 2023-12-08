@@ -117,7 +117,6 @@ Node* BST::find(string key){
             currNode = currNode -> left;
         }
         else if(key == currNode->key){ //found
-            cout << "Node found!" << endl;
             return currNode;
         }
     }
