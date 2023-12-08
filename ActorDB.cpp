@@ -47,9 +47,6 @@ bool ActorDB::addActor(Actor &actor) {
 	}
 	actorBST.insert(actor.last, index);//index not being updated
 	actorBST.find(actor.last)->arrayIndex = index;
-
-
-
 	
 	return true;
 }
