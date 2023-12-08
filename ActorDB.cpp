@@ -63,13 +63,14 @@ bool ActorDB::praiseActor(string lastName, int praisePts) {
 		return false;
 	}
     int index = actorNode->arrayIndex;
-	actor->praise_points += praisePts;
+	
     Actor* actor = &actors.at(index);  // Get a pointer to the actor
+	actor->praise_points += praisePts; // Update praise points in actor
     // Check if actor is already in the heap
     if (actor->heap_index != -1) {
         // Update actor's position in the heap
         praiseHeap.updateNode(index, actor->praise_points);
-		// Update praise points in actor
+		
     	
 		cout << "Updating actor";
     } else {
@@ -89,7 +90,12 @@ void ActorDB::showPraise(){
 }
 
 void ActorDB::awardActor(){
+	cout << "on the way to praise";
 	Actor* actor = praiseHeap.extractMax();
+	if (actor == nullptr){
+		cout << "not in heap";
+		return;
+	}
 	cout << "Awarded " << actor->last << " " << actor->first;
 	actor->awarded = true;
 }

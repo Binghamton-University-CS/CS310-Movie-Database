@@ -21,7 +21,7 @@ int Heap::Perlocatedown(int nodeIndex) {
    // Find the max among the node and all the node's children
    int maxValue = value;
    int maxIndex = -1;
-   if(childIndex >= arr.size()){
+   if(childIndex > arr.size()){
       return nodeIndex;
    }
    for (int i = 0; i < 2 && i + childIndex < arr.size(); i++) {
