@@ -10,6 +10,7 @@ int Heap::Perlocateup(int nodeIndex) {
       Actor* temp = arr.at(nodeIndex);
       arr.at(nodeIndex) = arr.at(parentIndex);
       arr.at(parentIndex) = temp;
+      arr.at(parentIndex)->heap_index = nodeIndex;
       nodeIndex = Perlocateup(parentIndex);
    }
    return nodeIndex;
@@ -38,6 +39,7 @@ int Heap::Perlocatedown(int nodeIndex) {
       Actor* temp = arr.at(nodeIndex);
       arr.at(nodeIndex) = arr.at(maxIndex);
       arr.at(maxIndex) = temp;
+      arr.at(maxIndex)->heap_index = nodeIndex;
       nodeIndex = Perlocatedown(childIndex);
       return nodeIndex;
    }
