@@ -36,7 +36,7 @@ Actor::Actor() {
   awarded = false;
 }
 
-Actor::Actor(unsigned int act_id, string lname, string fname) {
+Actor::Actor(int act_id, string lname, string fname) {
 	first = fname;
 	last = lname;
 	actor_id = act_id;

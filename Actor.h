@@ -18,7 +18,7 @@ class Actor {
 		int praise_points;
 		bool awarded;
 		Actor();
-		Actor(unsigned int act_id, string last, string first); 
+		Actor( int act_id, string last, string first); 
 		Actor& operator=(Actor& other);
 		bool operator==(Actor& other);
 		bool operator>(Actor& other);
@@ -27,7 +27,7 @@ class Actor {
 		string getName() const { 
 			return first + " " + last;
 		}
-		unsigned int getID() const { return actor_id; }
+		int getID() const { return actor_id; }
 };
 
 #endif
