@@ -77,7 +77,6 @@ Actor* Heap::extractMax() {
         }
 
         Actor* maxActor = arr.at(0); // The actor with the maximum praise points
-
         // Replace the root of the heap with the last element
         arr.at(0) = arr.at(arr.size() - 1);
         arr.erase(arr.size()-1); // Remove the last element

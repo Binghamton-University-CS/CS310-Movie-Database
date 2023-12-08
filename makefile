@@ -7,7 +7,7 @@ EXE = movie_db
 MENU_EXE = menu_sample
 
 # REPODIR = ../$(COURSE)-$(SEMESTER)-$(CP_NUMBER)-$(GITUSERID)
-REPODIR = ../$(COURSE)-$(SEMESTER)-CP1-Sample
+REPODIR = ../$(COURSE)-$(SEMESTER)-CP4-Sample
 TARFILE = CP$(CP_NUMBER)_$(LASTNAME)_$(USER)_$(GITUSERID).tar
 
 FLAGS = -Wall -Wextra -g
