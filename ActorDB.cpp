@@ -65,15 +65,15 @@ bool ActorDB::praiseActor(string lastName, int praisePts) {
 
     int index = actorNode->arrayIndex;
     Actor* actor = &actors.at(index);  // Get a pointer to the actor
-
-    // Update praise points
-    actor->praise_points += praisePts;
-
     // Check if actor is already in the heap
     if (actor->heap_index != -1) {
         // Update actor's position in the heap
         praiseHeap.updateNode(index, actor->praise_points);
+		// Update praise points in actor
+    	actor->praise_points += praisePts;
+		cout << "Updating actor";
     } else {
+		cout << "Inserting actor";
         // Insert the actor into the heap for the first time
         actor-> heap_index = praiseHeap.Insert(actor); // Mark the actor as present in the heap
     }
