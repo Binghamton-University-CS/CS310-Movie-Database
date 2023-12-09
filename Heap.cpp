@@ -78,21 +78,19 @@ int Heap::updateNode(int index, int num) {
    }
 
 Actor* Heap::extractMax() {
-        if (arr.size() == 0) {
-            return nullptr; // Heap is empty
-        }
+      if (arr.size() == 0) {
+         return nullptr; // Heap is empty
+      }
 
-        Actor* maxActor = arr.at(0); // The actor with the maximum praise points
-        // Replace the root of the heap with the last element
-        arr.at(0) = arr.at(arr.size() - 1);
-        arr.at(0)->heap_index = 0;
-        arr.erase(arr.size()-1); // Remove the last element
-       if (arr.size() != 0) {
-        arr.at(0)->heap_index = 0;
-        Perlocatedown(0);
-    }
-        
-
-        return maxActor;
-    }
+      Actor* maxActor = arr.at(0); // The actor with the maximum praise points
+      // Replace the root of the heap with the last element
+      arr.at(0) = arr.at(arr.size() - 1);
+      arr.at(0)->heap_index = 0;
+      arr.erase(arr.size()-1); // Remove the last element
+      if (arr.size() != 0) {
+      arr.at(0)->heap_index = 0;
+      Perlocatedown(0);
+   }
+   return maxActor;
+}
 

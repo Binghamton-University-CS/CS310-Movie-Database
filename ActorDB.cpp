@@ -101,6 +101,9 @@ void ActorDB::awardActor(){
 	// 	//actor = actors.at(0);
 		
 	// }
+	if(!actor){
+		actor = &actors.at(0);
+	}
 	cout << "Actor " << actor->first << " " << actor->last << " presented with a Lifetime Achievment Award (" << 
 	actor->praise_points << " praise points)" << endl;
 	actor->awarded = true;

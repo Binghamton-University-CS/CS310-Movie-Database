@@ -38,11 +38,11 @@ void do_praise_actor(string actor_last, int praise_points) {
     
 }
 void do_award_actor(){
-   cout << "award_actor " << endl;
+   //cout << "award_actor " << endl;
    actordb.awardActor();
 } 
 void do_show_praise(){
-   cout << "show_praise: printing actors" << endl;
+   //cout << "show_praise: printing actors" << endl;
    actordb.showPraise();
 }
 
@@ -151,6 +151,6 @@ bool accept_commands(istream &is, bool silent=false, bool echo=false) {
 
 int main()
 {
-  accept_commands(cin, false, false);
+  accept_commands(cin, true, false);
   return 0;
 }
