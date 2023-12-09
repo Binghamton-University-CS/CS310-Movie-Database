@@ -89,7 +89,9 @@ bool ActorDB::praiseActor(string lastName, int praisePts) {
 
 void ActorDB::showPraise(){
 	for(int i = 0; i < actors.size(); i ++){
-		cout << actors.at(i).getName() << " has " << actors.at(i).praise_points << " praise points " << endl;
+		if(!actors.at(i).awarded){
+		cout<< actors.at(i).getID()<< " " << actors.at(i).getName() << " has " << actors.at(i).praise_points << " praise points " << endl;
+		}
 	}
 }
 
