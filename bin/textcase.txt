@@ -3,5 +3,9 @@ register_actor 4 Cooper Bradley
 register_actor 2 Mitchell Shay
 register_actor 5 Adams Amy
 register_actor 1 Evans Chris
+praise_actor Johnson 20
+remove_actor 3
+show_praise
+praise_actor Johnson 10
 award_actor
 quit

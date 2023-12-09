@@ -50,13 +50,16 @@ int Heap::Perlocatedown(int nodeIndex) {
 int Heap::Insert(Actor* actor){ //returns the index at where its inserted
 
    arr.push_back(actor);
-   cout << " praised";
+   //cout << " praised";
    return Perlocateup(arr.size()-1);
 
 }
 void Heap::Delete(int index){
    arr.at(index) = arr.at(arr.size()-1);
    arr.erase(arr.size()-1);
+   if(arr.size()==0){
+      return;
+   }
    Perlocatedown(index);
    return;
 }

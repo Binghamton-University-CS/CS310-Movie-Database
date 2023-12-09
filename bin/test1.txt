@@ -3,4 +3,4 @@ register_actor: Registered actor Bradley Cooper
 register_actor: Registered actor Shay Mitchell
 register_actor: Registered actor Amy Adams
 register_actor: Registered actor Chris Evans
-award_actor 
+ praised
