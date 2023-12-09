@@ -1,5 +1,5 @@
 #include "Actor.h"
-
+#include "Node.h"
 
 Actor& Actor::operator=(Actor& other) {
     if (this != &other) { 

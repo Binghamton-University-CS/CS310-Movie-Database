@@ -48,6 +48,7 @@ template <typename type>
 void Array<type>::sort_push(){
     for (int i = len-1;i > 0; i--){
         if(arr[i]<arr[i-1]){
+            arr[i-1].bst_pointer->arrayIndex ++;
             type temp = arr[i];
             arr[i] = arr[i-1];
             arr[i-1] = temp;

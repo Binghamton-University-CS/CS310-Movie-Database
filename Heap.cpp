@@ -36,6 +36,9 @@ int Heap::Perlocatedown(int nodeIndex) {
       return nodeIndex;
    }
    else {
+      int tempIndex = nodeIndex;
+      arr.at(nodeIndex)->heap_index = maxIndex;
+      arr.at(maxIndex)->heap_index = tempIndex;
       Actor* temp = arr.at(nodeIndex);
       arr.at(nodeIndex) = arr.at(maxIndex);
       arr.at(maxIndex) = temp;
@@ -59,17 +62,15 @@ void Heap::Delete(int index){
    return;
 }
 
-bool Heap::updateNode(int index, int num) {
+int Heap::updateNode(int index, int num) {
       if (index < 0 || index >= arr.size()) return false;
       if (arr.at(index)->praise_points < num) {
          arr.at(index)->praise_points = num;
-         Perlocateup(index);
-         return true;
+         return Perlocateup(index);
       }
       if (arr.at(index)->praise_points > num) {
          arr.at(index)->praise_points = num;
-         Perlocatedown(index);
-         return true;
+         return Perlocatedown(index);
       }
       return false;
    }
@@ -82,6 +83,7 @@ Actor* Heap::extractMax() {
         Actor* maxActor = arr.at(0); // The actor with the maximum praise points
         // Replace the root of the heap with the last element
         arr.at(0) = arr.at(arr.size() - 1);
+        arr.at(0)->heap_index = 0;
         arr.erase(arr.size()-1); // Remove the last element
 
         // Percolate down the new root to maintain the heap property

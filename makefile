@@ -27,10 +27,10 @@ $(OBJ)/Actor.o: Actor.cpp Actor.h Array.h
 $(OBJ)/Heap.o: Heap.cpp Heap.h Array.h 
 	$(CC) $(FLAGS) -c Heap.cpp -o $@
 
-$(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h Array.h BST.h
+$(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h Array.h BST.h Node.h
 	$(CC) $(FLAGS) -c ActorDB.cpp -o $@
 
-$(OBJ)/movie_db.o: movie_db.cpp ActorDB.h Array.h BST.h
+$(OBJ)/movie_db.o: movie_db.cpp ActorDB.h Array.h BST.h Node.h
 	$(CC) $(FLAGS) -c movie_db.cpp -o $@
 # $(BIN)/$(MENU_EXE): $(OBJ)/sample_menu.o
 # 	$(CC) $(FLAGS) $(OBJ)/sample_menu.o -o $@

@@ -45,7 +45,7 @@ bool ActorDB::addActor(Actor &actor) {
 		if(actors.at(i).getID() == actor.getID())
 		index = i;
 	}
-	actorBST.insert(actor.last, index);//index not being updated
+	actors.at(index).bst_pointer = actorBST.insert(actor.last, index);//index not being updated
 	actorBST.find(actor.last)->arrayIndex = index;
 	
 	
@@ -68,7 +68,7 @@ bool ActorDB::praiseActor(string lastName, int praisePts) {
     // Check if actor is already in the heap
     if (actor->heap_index != -1) {
         // Update actor's position in the heap
-        praiseHeap.updateNode(index, actor->praise_points);
+        actor-> heap_index = praiseHeap.updateNode(index, actor->praise_points);
 		
     	
 		cout << "Updating actor";
@@ -97,4 +97,5 @@ void ActorDB::awardActor(){
 	}
 	cout << "Awarded " << actor->last << " " << actor->first;
 	actor->awarded = true;
+	actor->heap_index = -1;
 }

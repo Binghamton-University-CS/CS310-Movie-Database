@@ -2,24 +2,17 @@
 #define BST_H
 #include <iostream>
 #include <string>
+#include "Node.h"
 using namespace std;
 
-struct Node{
-    string key; //key is last name33
-    Node *left, *right;
-    int arrayIndex;
-
-    Node(string k): key(k), left(nullptr), right(nullptr), arrayIndex(-1){}
-
-};
 
 class BST{
     private:
-        Node *root;
+        Node* root;
     public:
         BST(Node* treeRoot): root(treeRoot) {}
         BST() : root(nullptr) {}
-        void insert(string& key, int& index);
+        Node* insert(string& key, int& index);
         bool remove(string key);
         Node* getRoot();
         Node* find(string key);
@@ -28,12 +21,12 @@ class BST{
         
 };
 
-void BST::insert(string& key, int& index){
+Node* BST::insert(string& key, int& index){
     if(root == nullptr){
         root = new Node(key);
         root -> arrayIndex = index;
         //cout << root -> key << endl;
-        return;
+        return root;
     }
     
     Node* currNode = root;
@@ -43,7 +36,7 @@ void BST::insert(string& key, int& index){
             if(currNode -> right == nullptr){
                 currNode -> right = new Node(key);
                 currNode -> right -> arrayIndex = index;
-                break;
+                return currNode->right;
             }
             else currNode = currNode -> right;
         }
@@ -52,7 +45,7 @@ void BST::insert(string& key, int& index){
             if(currNode -> left == nullptr){
                 currNode -> left = new Node(key);
                 currNode ->left -> arrayIndex = index;
-                break;
+                return currNode->left;
             }
             else currNode = currNode -> left;
         }

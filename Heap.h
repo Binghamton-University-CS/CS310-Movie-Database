@@ -15,7 +15,7 @@ class Heap{
         void Extractmax();
         int Insert(Actor* actor); //returns the index where its inserted
         void Delete(int index); //should be bool
-        bool updateNode(int index, int num); //updates praise points, returns bool 
+        int updateNode(int index, int num); //updates praise points, returns bool 
         Actor* extractMax();
         //int getArrayIndex(praise_points);
         
