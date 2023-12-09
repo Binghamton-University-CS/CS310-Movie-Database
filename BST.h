@@ -35,9 +35,11 @@ void BST::insert(string& key, int& index){
         //cout << root -> key << endl;
         return;
     }
+    
     Node* currNode = root;
     while(1){
         if(key > currNode->key){
+            
             if(currNode -> right == nullptr){
                 currNode -> right = new Node(key);
                 currNode -> right -> arrayIndex = index;
@@ -46,6 +48,7 @@ void BST::insert(string& key, int& index){
             else currNode = currNode -> right;
         }
         if(key < currNode->key){
+            
             if(currNode -> left == nullptr){
                 currNode -> left = new Node(key);
                 currNode ->left -> arrayIndex = index;

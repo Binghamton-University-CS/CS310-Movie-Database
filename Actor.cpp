@@ -9,6 +9,7 @@ Actor& Actor::operator=(Actor& other) {
         praise_points = other.praise_points;
         heap_index = other.heap_index;
         awarded = other.awarded;
+        bst_pointer = other.bst_pointer;
     }
     return *this;
 }
@@ -24,7 +25,8 @@ bool Actor::operator==(Actor& other){
      first == other.first &&
      praise_points == other.praise_points &&
      heap_index == other.heap_index &&
-     awarded == other.awarded) return true;
+     awarded == other.awarded &&
+     bst_pointer == other.bst_pointer) return true;
   return false;
 }
 Actor::Actor() {
@@ -34,6 +36,7 @@ Actor::Actor() {
   heap_index = -1;
   praise_points = 0;
   awarded = false;
+  bst_pointer = nullptr;
 }
 
 Actor::Actor(int act_id, string lname, string fname) {
@@ -43,4 +46,5 @@ Actor::Actor(int act_id, string lname, string fname) {
   heap_index = -1;
   praise_points = 0;
   awarded = false;
+  bst_pointer = nullptr;
 }
