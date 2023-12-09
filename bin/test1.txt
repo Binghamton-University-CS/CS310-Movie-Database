@@ -1,33 +1,6 @@
-register_actor: Registered actor Shyam Kannan
-register_actor: Registered actor Sam Buckler
-register_actor: Registered actor first last
-Inserting actor praisedshow_praise: printing actors
-first last: 0 praise points -1
-Shyam Kannan: 0 praise points -1
-Sam Buckler: 10 praise points 0
-Inserting actor praisedshow_praise: printing actors
-first last: 0 praise points -1
-Shyam Kannan: 15 praise points 0
-Sam Buckler: 10 praise points 1
-Inserting actor praisedshow_praise: printing actors
-first last: 2 praise points 2
-Shyam Kannan: 15 praise points 0
-Sam Buckler: 10 praise points 1
-Updating actorshow_praise: printing actors
-first last: 25 praise points 0
-Shyam Kannan: 25 praise points 0
-Sam Buckler: 10 praise points 1
+register_actor: Registered actor Dwayne Johnson
+register_actor: Registered actor Bradley Cooper
+register_actor: Registered actor Shay Mitchell
+register_actor: Registered actor Amy Adams
+register_actor: Registered actor Chris Evans
 award_actor 
-on the way to praiseAwarded Kannan Shyamshow_praise: printing actors
-first last: 25 praise points 0
-*AWARD*:	Shyam Kannan: 25 praise points -1
-Sam Buckler: 10 praise points 1
-Updating actorRemoved first last from the program and all casts
-show_praise: printing actors
-Sam Buckler: 10 praise points 1
-*AWARD*:	Shyam Kannan: 25 praise points -1
-register_actor: Registered actor Mike Lewis
-Removed Sam Buckler from the program and all casts
-show_praise: printing actors
-Mike Lewis: 0 praise points -1
-*AWARD*:	Shyam Kannan: 25 praise points -1

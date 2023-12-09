@@ -1,20 +1,7 @@
-register_actor 3 Kannan Shyam
-register_actor 4 Buckler Sam
-register_actor 1 last first
-praise_actor Buckler 10
-show_praise
-praise_actor Kannan 15
-show_praise
-praise_actor last 2
-show_praise
-praise_actor last 23
-show_praise
+register_actor 3 Johnson Dwayne
+register_actor 4 Cooper Bradley
+register_actor 2 Mitchell Shay
+register_actor 5 Adams Amy
+register_actor 1 Evans Chris
 award_actor
-show_praise
-praise_actor last 20
-remove_actor 1
-show_praise
-register_actor 1 Lewis Mike
-remove_actor 4
-show_praise
 quit

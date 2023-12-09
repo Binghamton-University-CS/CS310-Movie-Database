@@ -8,7 +8,10 @@ ActorDB::ActorDB() {
 bool ActorDB::removeActor(int actor_id){
   for(int i = 0; i < actors.size(); i++){
     if(actors.at(i).getID() == actor_id){
+	  praiseHeap.Delete(actors.at(i).heap_index);
+	  actorBST.remove(actors.at(i).last);
       actors.erase(i);
+	
 	  return true; //wrong logic
     }
   }
@@ -37,6 +40,7 @@ bool ActorDB::addActor(Actor &actor) {
 		if (actors.at(i).getID() == actor.getID())
 			return false;
 	}
+	//BST Find 
 	actors.push_back(actor);
 	actors.sort_push();
 
@@ -45,6 +49,7 @@ bool ActorDB::addActor(Actor &actor) {
 		if(actors.at(i).getID() == actor.getID())
 		index = i;
 	}
+	
 	actors.at(index).bst_pointer = actorBST.insert(actor.last, index);//index not being updated
 	actorBST.find(actor.last)->arrayIndex = index;
 	
@@ -58,7 +63,8 @@ bool ActorDB::praiseActor(string lastName, int praisePts) {
         return false;
     }
 	if(actors.at(actorNode->arrayIndex).awarded){
- 		cout << "Actor has been awarded already :/ ";
+ 		cout << "That's nice but actor " << actors.at(actorNode->arrayIndex).first <<
+		" " << lastName << " has already received the award." << endl;
 		return false;
 	}
     int index = actorNode->arrayIndex;
@@ -71,9 +77,9 @@ bool ActorDB::praiseActor(string lastName, int praisePts) {
         actor-> heap_index = praiseHeap.updateNode(index, actor->praise_points);
 		
     	
-		cout << "Updating actor";
+		//cout << "Updating actor";
     } else {
-		cout << "Inserting actor";
+		//cout << "Inserting actor";
         // Insert the actor into the heap for the first time
         actor-> heap_index = praiseHeap.Insert(actor); // Mark the actor as present in the heap
     }
@@ -83,19 +89,22 @@ bool ActorDB::praiseActor(string lastName, int praisePts) {
 
 void ActorDB::showPraise(){
 	for(int i = 0; i < actors.size(); i ++){
-		if(actors.at(i).awarded) cout << "*AWARD*:	";
-		cout << actors.at(i).getName() << ": " << actors.at(i).praise_points << " praise points "<< actors.at(i).heap_index << endl;
+		if(actors.at(i).praise_points > 0) 
+			cout << actors.at(i).getName() << ": " << actors.at(i).praise_points << " praise points "<< actors.at(i).heap_index << endl;
 	}
 }
 
 void ActorDB::awardActor(){
-	cout << "on the way to praise";
+	//cout << "on the way to praise";
+	
 	Actor* actor = praiseHeap.extractMax();
-	if (actor == nullptr){
-		cout << "not in heap";
-		return;
-	}
-	cout << "Awarded " << actor->last << " " << actor->first;
+	// if (actor == nullptr){
+	// 	//actor = actors.at(0);
+		
+	// }
+	cout << "Actor " << actor->first << " " << actor->last << " presented with a Lifetime Achievment Award (" << 
+	actor->praise_points << " praise points)" << endl;
 	actor->awarded = true;
 	actor->heap_index = -1;
+	
 }
