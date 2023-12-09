@@ -1,213 +1,33 @@
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: register_actor: Registered actor Shyam Kannan
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: register_actor: Registered actor Sam Buckler
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: register_actor: Registered actor first last
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: Inserting actor praised
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: show_praise: printing actors
+register_actor: Registered actor Shyam Kannan
+register_actor: Registered actor Sam Buckler
+register_actor: Registered actor first last
+Inserting actor praisedshow_praise: printing actors
 first last: 0 praise points -1
-Shyam Kannan: 10 praise points 0
-Sam Buckler: 0 praise points -1
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: Inserting actor praised
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: show_praise: printing actors
-first last: 15 praise points 0
-Shyam Kannan: 10 praise points 1
-Sam Buckler: 0 praise points -1
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: Updating actor
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: show_praise: printing actors
-first last: 17 praise points 0
-Shyam Kannan: 10 praise points 1
-Sam Buckler: 0 praise points -1
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: Updating actor
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: show_praise: printing actors
-first last: 40 praise points 0
-Shyam Kannan: 10 praise points 1
-Sam Buckler: 0 praise points -1
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: award_actor 
-on the way to praiseAwarded last first
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: show_praise: printing actors
-*AWARD*:	first last: 40 praise points 0
-Shyam Kannan: 10 praise points 1
-Sam Buckler: 0 praise points -1
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: Actor has been awarded already :/ 
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: Removed first last from the program and all casts
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: show_praise: printing actors
-Sam Buckler: 0 praise points -1
-Shyam Kannan: 10 praise points 1
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: Error: field l is not an integer
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: Removed Sam Buckler from the program and all casts
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: show_praise: printing actors
-Shyam Kannan: 10 praise points 1
-
-Enter a command: 
-Choose from 
-   register_actor <actorid> <last> <first>
-   remove_actor <actorid>
-   praise_actor <last> <praise points>
-   award_actor
-   show_praise
-   quit
-: 
+Shyam Kannan: 0 praise points -1
+Sam Buckler: 10 praise points 0
+Inserting actor praisedshow_praise: printing actors
+first last: 0 praise points -1
+Shyam Kannan: 15 praise points 0
+Sam Buckler: 10 praise points 1
+Inserting actor praisedshow_praise: printing actors
+first last: 2 praise points 2
+Shyam Kannan: 15 praise points 0
+Sam Buckler: 10 praise points 1
+Updating actorshow_praise: printing actors
+first last: 25 praise points 0
+Shyam Kannan: 25 praise points 0
+Sam Buckler: 10 praise points 1
+award_actor 
+on the way to praiseAwarded Kannan Shyamshow_praise: printing actors
+first last: 25 praise points 0
+*AWARD*:	Shyam Kannan: 25 praise points -1
+Sam Buckler: 10 praise points 1
+Updating actorRemoved first last from the program and all casts
+show_praise: printing actors
+Sam Buckler: 10 praise points 1
+*AWARD*:	Shyam Kannan: 25 praise points -1
+register_actor: Registered actor Mike Lewis
+Removed Sam Buckler from the program and all casts
+show_praise: printing actors
+Mike Lewis: 0 praise points -1
+*AWARD*:	Shyam Kannan: 25 praise points -1

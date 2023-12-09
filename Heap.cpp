@@ -36,13 +36,12 @@ int Heap::Perlocatedown(int nodeIndex) {
       return nodeIndex;
    }
    else {
-      int tempIndex = nodeIndex;
-      arr.at(nodeIndex)->heap_index = maxIndex;
-      arr.at(maxIndex)->heap_index = tempIndex;
+      
       Actor* temp = arr.at(nodeIndex);
       arr.at(nodeIndex) = arr.at(maxIndex);
       arr.at(maxIndex) = temp;
       arr.at(nodeIndex)->heap_index = nodeIndex;
+      arr.at(maxIndex)->heap_index = maxIndex;
       nodeIndex = Perlocatedown(childIndex);
       return nodeIndex;
    }
@@ -85,9 +84,11 @@ Actor* Heap::extractMax() {
         arr.at(0) = arr.at(arr.size() - 1);
         arr.at(0)->heap_index = 0;
         arr.erase(arr.size()-1); // Remove the last element
-
-        // Percolate down the new root to maintain the heap property
+       if (arr.size() != 0) {
+        arr.at(0)->heap_index = 0;
         Perlocatedown(0);
+    }
+        
 
         return maxActor;
     }
