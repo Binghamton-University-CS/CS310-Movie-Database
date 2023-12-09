@@ -13,7 +13,7 @@ void do_remove_actor(int actor_id){
     cout << "Removed " << name << " from the program and all casts" << endl;
   else
     cout << "remove_actor: Error actor id " << actor_id <<
-      "does not exist" << endl;
+      " does not exist" << endl;
 }
 void do_register_actor(int actor_id, string actor_last, string actor_first) {
 	/*

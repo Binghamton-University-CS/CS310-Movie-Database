@@ -8,7 +8,7 @@ ActorDB::ActorDB() {
 bool ActorDB::removeActor(int actor_id){
   for(int i = 0; i < actors.size(); i++){
     if(actors.at(i).getID() == actor_id){
-	  praiseHeap.Delete(actors.at(i).heap_index);
+	  if(actors.at(i).heap_index != -1) praiseHeap.Delete(actors.at(i).heap_index);
 	  actorBST.remove(actors.at(i).last);
       actors.erase(i);
 	

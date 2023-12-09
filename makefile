@@ -3,7 +3,7 @@ SEMESTER = Fall2023
 CP_NUMBER = 4
 LASTNAME = Lewis
 GITUSERID = mlewis608
-EXE = movie_db
+EXE = actor_db
 MENU_EXE = menu_sample
 
 # REPODIR = ../$(COURSE)-$(SEMESTER)-$(CP_NUMBER)-$(GITUSERID)
@@ -18,8 +18,8 @@ OBJ = obj
 
 all: $(EXE)
 
-$(EXE): $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o $(OBJ)/movie_db.o
-	$(CC) $(FLAGS) $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o $(OBJ)/movie_db.o -o $(BIN)/$@
+$(EXE): $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o $(OBJ)/actor_db.o
+	$(CC) $(FLAGS) $(OBJ)/ActorDB.o $(OBJ)/Actor.o $(OBJ)/Heap.o $(OBJ)/actor_db.o -o $(BIN)/$@
 
 $(OBJ)/Actor.o: Actor.cpp Actor.h Array.h
 	$(CC) $(FLAGS) -c Actor.cpp -o $@
@@ -30,8 +30,8 @@ $(OBJ)/Heap.o: Heap.cpp Heap.h Array.h
 $(OBJ)/ActorDB.o: ActorDB.cpp ActorDB.h Array.h BST.h Node.h
 	$(CC) $(FLAGS) -c ActorDB.cpp -o $@
 
-$(OBJ)/movie_db.o: movie_db.cpp ActorDB.h Array.h BST.h Node.h
-	$(CC) $(FLAGS) -c movie_db.cpp -o $@
+$(OBJ)/actor_db.o: actor_db.cpp ActorDB.h Array.h BST.h Node.h
+	$(CC) $(FLAGS) -c actor_db.cpp -o $@
 # $(BIN)/$(MENU_EXE): $(OBJ)/sample_menu.o
 # 	$(CC) $(FLAGS) $(OBJ)/sample_menu.o -o $@
 
